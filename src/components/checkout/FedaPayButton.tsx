@@ -47,7 +47,7 @@ export function FedaPayButton({ formData, disabled, loading, onSuccess }: Props)
     window.FedaPay.init({
       public_key: process.env.NEXT_PUBLIC_FEDAPAY_PUBLIC_KEY as string,
       transaction: {
-        amount: 3200,
+        amount: 2000,
         description: "Ticket Attiéké Party — BUE-ENEAM · 25 Mai 2026",
       },
       currency: { iso: "XOF" },
@@ -79,7 +79,7 @@ export function FedaPayButton({ formData, disabled, loading, onSuccess }: Props)
         </>
       ) : (
         <>
-          Payer 3 200 FCFA
+          Payer 2 000 FCFA
           <span className="text-xl">🔒</span>
         </>
       )}

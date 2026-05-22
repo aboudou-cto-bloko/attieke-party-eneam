@@ -43,7 +43,7 @@ export function CheckoutForm() {
         email: formData.email,
         phone: formData.phone,
         txnId,
-        amount: 3200,
+        amount: 2000,
         currency: "XOF",
       });
       router.push(`/ticket/${ticketId}`);
@@ -123,15 +123,11 @@ export function CheckoutForm() {
               Lundi 25 Mai 2026 · 15H · BUE-ENEAM
             </p>
           </div>
-          <p className="text-cream font-heading text-sm font-semibold">3 000 FCFA</p>
-        </div>
-        <div className="flex items-center justify-between border-t border-line pt-2.5">
-          <p className="text-muted font-heading text-xs">Frais de billetterie</p>
-          <p className="text-muted font-heading text-xs">200 FCFA</p>
+          <p className="text-cream font-heading text-sm font-semibold">2 000 FCFA</p>
         </div>
         <div className="flex items-center justify-between border-t border-line-light pt-2.5">
           <p className="text-cream font-heading text-sm font-bold">Total à payer</p>
-          <p className="text-gold font-display text-2xl">3 200 FCFA</p>
+          <p className="text-gold font-display text-2xl">2 000 FCFA</p>
         </div>
       </div>
 

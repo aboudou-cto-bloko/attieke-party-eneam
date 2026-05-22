@@ -21,7 +21,7 @@ export function CTASection() {
           href="/checkout"
           className="inline-flex items-center gap-3 bg-fire text-white font-heading font-bold text-xl uppercase px-12 py-5 rounded-xl shadow-[0_0_30px_rgba(232,121,26,0.5)] hover:shadow-[0_0_50px_rgba(232,121,26,0.8)] hover:scale-105 transition-all duration-200"
         >
-          Réserver — 3 000 FCFA
+          Réserver — 2 000 FCFA
         </Link>
 
         <p className="mt-6 text-muted text-sm font-heading">

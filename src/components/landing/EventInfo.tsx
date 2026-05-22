@@ -14,7 +14,7 @@ const cards = [
   {
     icon: "🎟",
     label: "Entrée",
-    value: "3 000 FCFA",
+    value: "2 000 FCFA",
     sub: "Par personne",
   },
 ];

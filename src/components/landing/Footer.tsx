@@ -4,7 +4,7 @@ export function Footer() {
       <div className="max-w-4xl mx-auto text-center">
         <p className="font-display text-2xl text-white mb-2">ATTIÉKÉ PARTY</p>
         <p className="text-muted text-sm font-heading mb-6">
-          BUE-ENEAM · Lundi 25 Mai 2026 · 15H · 3 000 FCFA
+          BUE-ENEAM · Lundi 25 Mai 2026 · 15H · 2 000 FCFA
         </p>
         <div className="flex flex-wrap justify-center gap-3 text-xs text-muted font-heading">
           {["#BUE-ENEAM", "#ATTIEKEPARTY", "#Jeux", "#Vibes", "#ENEAM"].map(

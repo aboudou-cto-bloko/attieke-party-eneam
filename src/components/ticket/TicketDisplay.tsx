@@ -161,7 +161,7 @@ export function TicketDisplay({ ticket }: Props) {
 
         {/* WhatsApp share */}
         <a
-          href={`https://wa.me/?text=${encodeURIComponent(`🔥 J'ai mon ticket pour l'Attiéké Party ! Lundi 25 Mai 2026 · 15H · 3000 FCFA · BUE-ENEAM. Prends le tien → attieke-party.vercel.app`)}`}
+          href={`https://wa.me/?text=${encodeURIComponent(`🔥 J'ai mon ticket pour l'Attiéké Party ! Lundi 25 Mai 2026 · 15H · 2000 FCFA · BUE-ENEAM. Prends le tien → attieke-party.vercel.app`)}`}
           target="_blank"
           rel="noopener noreferrer"
           className="mt-3 w-full py-3.5 px-6 bg-[#25D366] text-white font-heading font-bold text-base rounded-xl hover:bg-[#1ebe5d] hover:scale-[1.02] transition-all flex items-center justify-center gap-2"

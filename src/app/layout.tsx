@@ -26,11 +26,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(APP_URL),
   title: "Attiéké Party 🔥 — BUE-ENEAM · 25 Mai 2026",
   description:
-    "Le rendez-vous chill que tu ne dois surtout pas manquer ! Jeux, bouffe, musique et fun garanti. Entrée 3 000 FCFA. Lundi 25 Mai 2026 à partir de 15H.",
+    "Le rendez-vous chill que tu ne dois surtout pas manquer ! Jeux, bouffe, musique et fun garanti. Entrée 2 000 FCFA. Lundi 25 Mai 2026 à partir de 15H.",
   openGraph: {
     title: "Attiéké Party 🔥 — BUE-ENEAM · 25 Mai 2026",
     description:
-      "♟️ Jeux · 🍉 Bouffe · 🎵 Musique · 📸 Fun garanti. Lundi 25 Mai 2026 · 3 000 FCFA",
+      "♟️ Jeux · 🍉 Bouffe · 🎵 Musique · 📸 Fun garanti. Lundi 25 Mai 2026 · 2 000 FCFA",
     url: APP_URL,
     siteName: "Attiéké Party ENEAM",
     images: [
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Attiéké Party 🔥 — BUE-ENEAM · 25 Mai 2026",
-    description: "♟️ Jeux · 🍉 Bouffe · 🎵 Musique · 3 000 FCFA",
+    description: "♟️ Jeux · 🍉 Bouffe · 🎵 Musique · 2 000 FCFA",
     images: ["/assets/affiche-dark.jpg"],
   },
 };

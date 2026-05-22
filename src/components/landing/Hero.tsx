@@ -177,7 +177,7 @@ export function Hero() {
               🕒 Dès 15H
             </span>
             <span className="flex items-center gap-2 bg-gold/15 backdrop-blur-sm border border-gold/30 rounded-full px-4 py-2 text-sm text-gold font-heading font-bold">
-              🎟 3 000 FCFA
+              🎟 2 000 FCFA
             </span>
           </div>
 
