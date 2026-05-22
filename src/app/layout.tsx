@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     siteName: "Attiéké Party ENEAM",
     images: [
       {
-        url: "/assets/affiche-dark.jpg",
+        url: "/assets/affiche.jpg",
         width: 512,
         height: 1024,
         alt: "Attiéké Party — BUE-ENEAM 25 Mai 2026",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Attiéké Party 🔥 — BUE-ENEAM · 25 Mai 2026",
     description: "♟️ Jeux · 🍉 Bouffe · 🎵 Musique · 2 000 FCFA",
-    images: ["/assets/affiche-dark.jpg"],
+    images: ["/assets/affiche.jpg"],
   },
 };
 

@@ -115,7 +115,7 @@ export function Hero() {
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
       {/* Background image */}
       <Image
-        src="/assets/affiche-dark.jpg"
+        src="/assets/affiche.jpg"
         alt="Attiéké Party"
         fill
         priority

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { CountdownCard } from "./CountdownCard";
 
 export function Gallery() {
   return (
@@ -12,26 +13,19 @@ export function Gallery() {
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div className="relative rounded-2xl overflow-hidden aspect-[4/5] border border-line hover:border-fire/40 transition-colors">
+          {/* Affiche officielle */}
+          <div className="relative rounded-2xl overflow-hidden aspect-[4/5] border border-gold/20 hover:border-gold/50 transition-colors duration-300 shadow-[0_0_40px_rgba(240,192,64,0.08)] hover:shadow-[0_0_60px_rgba(240,192,64,0.18)] group">
             <Image
-              src="/assets/affiche-tropical.jpg"
-              alt="Attiéké Party tropical vibes"
+              src="/assets/affiche.jpg"
+              alt="Affiche officielle Attiéké Party 2026"
               fill
-              className="object-cover"
+              className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
               sizes="(max-width: 640px) 100vw, 50vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-base/60 to-transparent" />
           </div>
-          <div className="relative rounded-2xl overflow-hidden aspect-[4/5] border border-line hover:border-fire/40 transition-colors">
-            <Image
-              src="/assets/affiche-picnic.jpg"
-              alt="Attiéké Party picnic vibes"
-              fill
-              className="object-cover"
-              sizes="(max-width: 640px) 100vw, 50vw"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-base/60 to-transparent" />
-          </div>
+
+          {/* Compte à rebours */}
+          <CountdownCard />
         </div>
       </div>
     </section>
