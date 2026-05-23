@@ -20,6 +20,13 @@ export const createTicket = mutation({
   },
 });
 
+export const listAll = query({
+  args: {},
+  handler: async (ctx) => {
+    return await ctx.db.query("tickets").order("desc").collect();
+  },
+});
+
 export const getTicketById = query({
   args: { ticketId: v.string() },
   handler: async (ctx, { ticketId }) => {
