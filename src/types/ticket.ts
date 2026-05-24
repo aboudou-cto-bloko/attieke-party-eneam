@@ -11,5 +11,6 @@ export type Ticket = {
   status: "confirmed" | "pending";
   isUsed?: boolean;
   usedAt?: number;
+  isComplimentary?: boolean;
   _creationTime: number;
 };

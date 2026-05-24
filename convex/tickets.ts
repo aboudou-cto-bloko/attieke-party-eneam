@@ -11,6 +11,7 @@ export const createTicket = mutation({
     txnId: v.string(),
     amount: v.number(),
     currency: v.string(),
+    isComplimentary: v.optional(v.boolean()),
   },
   handler: async (ctx, args) => {
     return await ctx.db.insert("tickets", {
@@ -53,6 +54,27 @@ export const scanTicket = mutation({
       name: `${ticket.prenom} ${ticket.nom}`,
       amount: ticket.amount,
     };
+  },
+});
+
+export const createComplimentaryTicket = mutation({
+  args: {
+    ticketId: v.string(),
+    label: v.optional(v.string()),
+  },
+  handler: async (ctx, { ticketId, label }) => {
+    return await ctx.db.insert("tickets", {
+      ticketId,
+      prenom: label ?? "Invité",
+      nom: "",
+      email: "",
+      phone: "",
+      txnId: `COMP-${ticketId}`,
+      amount: 0,
+      currency: "XOF",
+      status: "confirmed",
+      isComplimentary: true,
+    });
   },
 });
 

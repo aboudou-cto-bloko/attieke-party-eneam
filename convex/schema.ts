@@ -14,6 +14,7 @@ export default defineSchema({
     status: v.union(v.literal("confirmed"), v.literal("pending")),
     isUsed: v.optional(v.boolean()),
     usedAt: v.optional(v.number()),
+    isComplimentary: v.optional(v.boolean()),
   })
     .index("by_ticket_id", ["ticketId"])
     .index("by_txn_id", ["txnId"]),

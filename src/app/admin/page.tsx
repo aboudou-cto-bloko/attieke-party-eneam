@@ -67,7 +67,9 @@ function Dashboard() {
   const confirmed = tickets.filter((t) => t.status === "confirmed");
   const pending = tickets.filter((t) => t.status === "pending");
   const scanned = tickets.filter((t) => t.isUsed === true);
-  const totalRevenue = confirmed.reduce((s, t) => s + t.amount, 0);
+  const paid = confirmed.filter((t) => !t.isComplimentary);
+  const comps = confirmed.filter((t) => t.isComplimentary === true);
+  const totalRevenue = paid.reduce((s, t) => s + t.amount, 0);
 
   return (
     <div className="min-h-screen bg-base px-4 py-10">
@@ -100,8 +102,8 @@ function Dashboard() {
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-10">
           <StatCard
             label="Tickets vendus"
-            value={String(confirmed.length)}
-            sub="confirmés"
+            value={String(paid.length)}
+            sub="payants confirmés"
             accent="gold"
           />
           <StatCard
@@ -117,15 +119,15 @@ function Dashboard() {
             accent="leaf"
           />
           <StatCard
-            label="En attente"
-            value={String(pending.length)}
-            sub="non confirmés"
+            label="Invités"
+            value={String(comps.length)}
+            sub="billets offerts"
             accent="muted"
           />
           <StatCard
-            label="Total"
-            value={String(tickets.length)}
-            sub="toutes entrées"
+            label="En attente"
+            value={String(pending.length)}
+            sub="non confirmés"
             accent="muted"
           />
         </div>
