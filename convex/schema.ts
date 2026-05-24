@@ -12,6 +12,8 @@ export default defineSchema({
     amount: v.number(),
     currency: v.string(),
     status: v.union(v.literal("confirmed"), v.literal("pending")),
+    isUsed: v.optional(v.boolean()),
+    usedAt: v.optional(v.number()),
   })
     .index("by_ticket_id", ["ticketId"])
     .index("by_txn_id", ["txnId"]),

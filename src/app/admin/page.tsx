@@ -3,6 +3,7 @@
 import { useQuery } from "convex/react";
 import { api } from "../../../convex/_generated/api";
 import { useState, useEffect, useCallback } from "react";
+import Link from "next/link";
 
 const ADMIN_KEY = process.env.NEXT_PUBLIC_ADMIN_KEY ?? "ENEAM2026";
 const SESSION_KEY = "ap_admin_auth";
@@ -65,6 +66,7 @@ function Dashboard() {
 
   const confirmed = tickets.filter((t) => t.status === "confirmed");
   const pending = tickets.filter((t) => t.status === "pending");
+  const scanned = tickets.filter((t) => t.isUsed === true);
   const totalRevenue = confirmed.reduce((s, t) => s + t.amount, 0);
 
   return (
@@ -80,14 +82,22 @@ function Dashboard() {
               Attiéké Party · BUE-ENEAM · 25 Mai 2026
             </p>
           </div>
-          <span className="inline-flex items-center gap-2 bg-[#4A7A3A]/10 border border-[#4A7A3A]/30 rounded-full px-4 py-2 text-[#4A7A3A] font-heading text-xs uppercase tracking-widest">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#4A7A3A] animate-pulse" />
-            Temps réel
-          </span>
+          <div className="flex items-center gap-3">
+            <Link
+              href="/scanner"
+              className="inline-flex items-center gap-2 bg-fire/10 border border-fire/30 rounded-full px-4 py-2 text-fire font-heading text-xs uppercase tracking-widest hover:bg-fire/20 transition-colors"
+            >
+              🎟 Scanner
+            </Link>
+            <span className="inline-flex items-center gap-2 bg-[#4A7A3A]/10 border border-[#4A7A3A]/30 rounded-full px-4 py-2 text-[#4A7A3A] font-heading text-xs uppercase tracking-widest">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#4A7A3A] animate-pulse" />
+              Temps réel
+            </span>
+          </div>
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-10">
           <StatCard
             label="Tickets vendus"
             value={String(confirmed.length)}
@@ -101,6 +111,12 @@ function Dashboard() {
             accent="fire"
           />
           <StatCard
+            label="Scannés"
+            value={String(scanned.length)}
+            sub={`/ ${confirmed.length} entrées`}
+            accent="leaf"
+          />
+          <StatCard
             label="En attente"
             value={String(pending.length)}
             sub="non confirmés"
@@ -110,7 +126,7 @@ function Dashboard() {
             label="Total"
             value={String(tickets.length)}
             sub="toutes entrées"
-            accent="leaf"
+            accent="muted"
           />
         </div>
 

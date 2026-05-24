@@ -9,5 +9,7 @@ export type Ticket = {
   amount: number;
   currency: string;
   status: "confirmed" | "pending";
+  isUsed?: boolean;
+  usedAt?: number;
   _creationTime: number;
 };

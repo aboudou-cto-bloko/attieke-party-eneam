@@ -27,6 +27,35 @@ export const listAll = query({
   },
 });
 
+export const scanTicket = mutation({
+  args: { ticketId: v.string() },
+  handler: async (ctx, { ticketId }) => {
+    const ticket = await ctx.db
+      .query("tickets")
+      .withIndex("by_ticket_id", (q) => q.eq("ticketId", ticketId))
+      .first();
+
+    if (!ticket) return { type: "invalid" as const };
+    if (ticket.status !== "confirmed") return { type: "not_confirmed" as const };
+
+    if (ticket.isUsed === true) {
+      return {
+        type: "already_used" as const,
+        name: `${ticket.prenom} ${ticket.nom}`,
+        usedAt: ticket.usedAt ?? null,
+      };
+    }
+
+    await ctx.db.patch(ticket._id, { isUsed: true, usedAt: Date.now() });
+
+    return {
+      type: "ok" as const,
+      name: `${ticket.prenom} ${ticket.nom}`,
+      amount: ticket.amount,
+    };
+  },
+});
+
 export const getTicketById = query({
   args: { ticketId: v.string() },
   handler: async (ctx, { ticketId }) => {
